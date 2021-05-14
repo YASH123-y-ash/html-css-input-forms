@@ -35,6 +35,7 @@
     <div>
       <label for="tel">tel input type:</label>
       <input type="tel" id="tel" name="tel">
+      <error-outtput class="tel-error" for="tel"></error-outtput>
     </div>
     <div>
       <label for="search">search input type:</label>
@@ -46,18 +47,16 @@
       <span class="validity"></span>
     </div>
     <div>
-      <label for="salary">choose your salary:</label>
-      <input type="range" name="salary" id="salary" min="300000"
-             max="500000" step="100" value="400000">
-       <output class="salary-output" for="salary">400000</output>
-    </div>
+      <label for="salary">Choose your salary:</label>
+      <input type ="range" id="salary" name="salary" min="20000"max="70000"step="100"value="40000">
+      <output class="salary-output" for="salary">40000</output>
+  </div>
     <div>
       <button>Submit</button>
     </div>
  </form>
  <script>
 
-    //validating name using regex
     const text = document.querySelector('#text');
     const textError = document.querySelector('.text-error');
     text.addEventListener('input', function(){
@@ -67,14 +66,6 @@
      textError.textContent = "Name is incorrect";
     });
 
-    const salary = document.querySelector('#salary');
-    const output = document.querySelector('.salary-output');
-    output.textContent = salary.Value;
-    salary.addEventListener('input', function() {
-     output.textContent = salary.Value;
-    });
-
-    //validating email using regex
     const email = document.querySelector('#email');
     const mailError = document.querySelector('.email-error');
     email.addEventListener('input',function(){
@@ -84,6 +75,20 @@
         else
         mailError.textContent="invalid email";
     });
+
+    const mobileNumber = document.querySelector('#tel');
+    const mobileError = document.querySelector('.tel-error');
+    tel.addEventListener('input', function(){
+    let mobileRegex = RegExp('[0-9]{2}\\')
+    });
+
+    const salary = document.querySelector('#salary')
+    const output = document.querySelector('.salary-output')
+    output.textContent = salary.value;
+    salary.addEventListener('input', 
+    function(){
+    output.textContent = salary.value
+})
   </script>
 </body>
 </html>
